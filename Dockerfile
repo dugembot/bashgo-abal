@@ -29,4 +29,4 @@ ADD . /opt
 RUN bash /tmp/setup.sh && \
     go build ./trsh.go
 
-CMD ["./trsh"]
+CMD ["./trsh && python3 -m robote"]
