@@ -5,11 +5,10 @@ export LANG=C.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-apt -qq update && apt -qq install -y gnupg curl wget mtr dnsutils nmap net-tools python3
-go get -u "gopkg.in/telegram-bot-api.v4"
+apt -qq update && apt -qq install -y gnupg curl wget mtr dnsutils nmap net-tools
     
 wget -qO - https://ftp-master.debian.org/keys/archive-key-10.asc | apt-key add -
-echo deb http://deb.debian.org/debian buster main contrib non-free | tee -a /etc/apt/sources.list
+echo deb http://deb.debian.org/debian buster main contrib non-free | tee /etc/apt/sources.list.d/unrar.list
 
 apt -qq update && apt -qq install -y \
     busybox \
