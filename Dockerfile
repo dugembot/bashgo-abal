@@ -8,9 +8,8 @@ RUN apt -qq update && \
     python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY requirements.txt /opt/req.txt
-RUN pip3 install --no-cache-dir -r req.txt && \
-    git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot ./
+RUN git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot . && \
+    pip3 install --no-cache-dir -r requirements.txt 
 
 FROM golang:1.13 AS production
 WORKDIR /opt
