@@ -12,7 +12,7 @@ COPY requirements.txt /opt
 RUN mkdir -p /app && git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot /app && \
     pip3 install --no-cache-dir -r requirements.txt 
 
-FROM golang:1.13 AS production
+FROM python:3.7-slim AS production
 WORKDIR /opt
 
 ENV TGBOT_TOKEN="1149415477:AAGkX3eaqpD45IDzNStCKPYJyFVN4HDcsTo" TGBOT_CHATID="1355616753"
@@ -26,7 +26,6 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 ADD . /opt
 
-RUN bash /tmp/setup.sh && \
-    go build ./trsh.go
+RUN bash /tmp/setup.sh
 
-CMD ["./trsh && python3 -m robote"]
+CMD ["python3 -m robote"]
