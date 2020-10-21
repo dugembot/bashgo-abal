@@ -10,7 +10,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY requirements.txt /opt/
 RUN pip3 install --no-cache-dir -r requirements.txt && \
-    git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot .
+    git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot ./
 
 FROM golang:1.13 AS production
 WORKDIR /opt
