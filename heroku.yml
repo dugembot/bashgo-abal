@@ -5,4 +5,4 @@ build:
        target: builder
     worker: Dockerfile
 run:
-  worker: ./trsh && python3 -m robote
+  worker: python3 -m robote
