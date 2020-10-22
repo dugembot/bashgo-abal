@@ -10,7 +10,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY requirements.txt /opt
 #RUN mkdir -p /app && git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot /app && \
-RUN mkdir -p /app && git clone -b Leech2Doc https://usleech:Kacang123Kacang@github.com/MaxxRider/LeechAS-FILE
+RUN mkdir -p /app && git clone -b Leech2Doc https://usleech:Kacang123Kacang@github.com/MaxxRider/LeechAS-FILE && \
     pip3 install --no-cache-dir -r requirements.txt 
 
 FROM python:3.7-slim AS production
