@@ -29,4 +29,4 @@ ADD . /opt
 
 RUN bash /tmp/setup.sh
 
-CMD ["python3 -m robote"]
+CMD ["python3 -m tobrot"]
