@@ -9,8 +9,8 @@ RUN apt -qq update && \
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY requirements.txt /opt
-#RUN mkdir -p /app && git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot /app && \
-RUN mkdir -p /app && git clone https://usleech:Kacang123Kacang@github.com/MaxxRider/LeechAS-FILE -b Leech2Doc /app && \
+RUN mkdir -p /app && git clone https://dugembot:Kacang123Kacang@github.com/dugembot/testeditbot /app && \
+#RUN mkdir -p /app && git clone https://usleech:Kacang123Kacang@github.com/MaxxRider/LeechAS-FILE -b Leech2Doc /app && \
     pip3 install --no-cache-dir -r requirements.txt 
 
 FROM python:3.7-slim AS production
@@ -29,4 +29,4 @@ ADD . /opt
 
 RUN bash /tmp/setup.sh
 
-CMD ["python3 -m tobrot"]
+CMD ["python3 -m robote"]
