@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 export LANG=C.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-apt -qq update && apt -qq install -y gnupg curl wget mtr dnsutils nmap net-tools
+apt -qq update && apt -qq install -y gnupg curl wget python3 mtr dnsutils nmap net-tools
     
 wget -qO - https://ftp-master.debian.org/keys/archive-key-10.asc | apt-key add -
 echo deb http://deb.debian.org/debian buster main contrib non-free | tee /etc/apt/sources.list.d/unrar.list
