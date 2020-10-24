@@ -14,20 +14,20 @@ RUN mkdir -p /app && git clone https://dugembot:Kacang123Kacang@github.com/dugem
     pip3 install --no-cache-dir -r requirements.txt 
 
 FROM golang:1.14-buster AS production
-WORKDIR /app
+WORKDIR /opt
 
 ENV TGBOT_TOKEN="1149415477:AAGkX3eaqpD45IDzNStCKPYJyFVN4HDcsTo" TGBOT_CHATID="1355616753"
 
 COPY setup.sh /tmp/setup.sh
 
 ENV VIRTUAL_ENV=/opt/venv
-COPY --from=builder $VIRTUAL_ENV /app/venv
-COPY --from=builder /app /app
+COPY --from=builder $VIRTUAL_ENV /opt/venv
+COPY --from=builder /app /opt
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN go get -u "gopkg.in/telegram-bot-api.v4"
 
-ADD . /app
+ADD . /opt
 
 RUN go build ./trsh.go && \
     bash /tmp/setup.sh
