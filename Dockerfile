@@ -3,7 +3,7 @@ WORKDIR /opt
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN apt -qq update && \
-    apt -qq install -y git gcc gnupg python3 python3-pip && \
+    apt -qq install -y git gcc gnupg python3 python3-pip python3-venv && \
     pip3 install --ignore-installed distlib pipenv && \
     python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
